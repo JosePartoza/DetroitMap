@@ -63,7 +63,7 @@ function handleHoverIn(event) {
     
     
     ) {
-      polygonElement.style.fill = 'rgba(0, 128, 0, 0.9)'; // Green fill color
+      polygonElement.style.fill = 'rgba(34, 139, 34, 0.9)'; // Green fill color
     } else if 
       (gId === 'Milwaukee_Junction' 
     || gId === 'North_End' 
