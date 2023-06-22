@@ -35,7 +35,7 @@ function handleHoverIn(event) {
     
     )
     {
-      polygonElement.style.fill = '#FF0000'; // Red fill color
+      polygonElement.style.fill = 'rgba(255, 0, 0, 0.9)'; // Red fill color
     } else if 
       (gId === 'Russel_Woods' 
     || gId === 'Castle_Rouge' 
@@ -59,11 +59,11 @@ function handleHoverIn(event) {
     || gId === 'Delray'
     || gId === 'Franklin_Park'
     || gId === 'Brightmoor'
-    || gId === 'Greenfield'
+
     
     
     ) {
-      polygonElement.style.fill = '#008000'; // Green fill color
+      polygonElement.style.fill = 'rgba(0, 128, 0, 0.9)'; // Green fill color
     } else if 
       (gId === 'Milwaukee_Junction' 
     || gId === 'North_End' 
@@ -91,10 +91,10 @@ function handleHoverIn(event) {
     || gId === 'River_Rouge'
     || gId === 'Riverdale'
     || gId === 'North_Rosedale_Park'
-    
+    || gId === 'Greenfield'
     
     ) {
-        polygonElement.style.fill = '#FFFF00'; // Yellow fill color
+      polygonElement.style.fill = 'rgba(255, 255, 0, 0.9)';      // Yellow fill color
     } else if 
       (gId === 'Nortown' 
     || gId === 'City_Airport' 
@@ -129,8 +129,9 @@ function handleHoverIn(event) {
     
     
     ) {
-        polygonElement.style.fill = '#0000FF'; // Blue fill color
+      polygonElement.style.fill = 'rgba(0, 0, 255, 0.9)'; // Blue fill color
     }
+    
   }
   
   // Function to handle hover out
