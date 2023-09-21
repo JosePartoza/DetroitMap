@@ -1,3 +1,32 @@
+// Configuration object for popovers based on xmlid
+var popoverConfig = {
+  'Five_Points': {
+    header: 'Header for 3606',
+    content: 'Content for 3606',
+    linkText: 'Link 3606',
+    href: 'https://www.google.com/'
+  },
+  'Old_Redford': {
+    header: 'Header for 3601',
+    content: 'Content for 3601',
+    linkText: 'Link 3606',
+    href: 'https://www.google.com/'
+  },
+  'Minock_Park': {
+    header: 'Header for 3601',
+    content: 'Content for 3601',
+    linkText: 'Link 3606',
+    href: 'https://www.google.com/'
+  },
+  // ... add other xmlids with their corresponding content
+};
+
+// Variable to hold a timeout
+var removalTimeout;
+
+
+
+
 // Function to handle hover in
 function handleHoverIn(event) {
     var gElement = event.currentTarget;
@@ -132,13 +161,57 @@ function handleHoverIn(event) {
       polygonElement.style.fill = 'rgba(0, 0, 255, 0.9)'; // Blue fill color
     }
     
+  // Check if configuration exists for the given xmlid
+  if (popoverConfig[gId]) {
+    var popoverDiv = document.createElement('div');
+    popoverDiv.className = 'popoverDiv';
+    popoverDiv.innerHTML = `
+      <div class="popoverHeader">${popoverConfig[gId].header}</div>
+      <div class="popoverContent">${popoverConfig[gId].content}</div>
+      <a class="popoverLink" href="${popoverConfig[gId].href}">${popoverConfig[gId].linkText}</a>
+    `;
+
+    // Position the popover
+    var rect = gElement.getBoundingClientRect();
+    popoverDiv.style.left = rect.left + 'px';
+    popoverDiv.style.top = (rect.top - 80) + 'px';
+    popoverDiv.style.position = 'fixed';
+    popoverDiv.style.zIndex = 1000;
+    popoverDiv.style.backgroundColor = 'black';
+    popoverDiv.style.color = 'white';
+    popoverDiv.style.borderRadius = '6px';
+    popoverDiv.style.padding = '10px';
+    popoverDiv.style.width = '200px';
+    popoverDiv.style.textAlign = 'center';
+
+    document.body.appendChild(popoverDiv);
+
+    // Add event listener for the popover
+    popoverDiv.addEventListener('mouseleave', handlePopoverLeave);
   }
+}
   
   // Function to handle hover out
   function handleHoverOut(event) {
     var polygonElement = event.currentTarget.querySelector('polygon');
     polygonElement.style.fill = ''; // Reset fill color
-  }
+    
+    // Clear any existing timeouts
+    clearTimeout(removalTimeout);
+
+    removalTimeout = setTimeout(() => {
+      var popoverDiv = document.querySelector('.popoverDiv');
+      if (popoverDiv && popoverDiv.parentNode) {
+        popoverDiv.removeEventListener('mouseleave', handlePopoverLeave);
+        popoverDiv.parentNode.removeChild(popoverDiv);
+      }
+  }, 500); // Delay for 100ms (0.1s)
+}
+
+// When leaving the popover itself, start the removal timer
+function handlePopoverLeave() {
+  handleHoverOut();
+}
   
   // Get all the <g> elements by their ids
   var gElements = document.querySelectorAll
@@ -151,16 +224,4 @@ function handleHoverIn(event) {
   });
   
   
-  // Add zoom functionality
-  function handleResize() {
-    var svgElement = document.getElementById('svg');
-    var svgContainer = document.getElementById('svg-container');
-    
-    var containerWidth = svgContainer.clientWidth;
-    var svgWidth = svgElement.getAttribute('width');
-    var scaleFactor = containerWidth / svgWidth;
-    
-    svgElement.style.transform = 'scale(' + scaleFactor + ')';
-}
-
-window.addEventListener('resize', handleResize);
+ 
