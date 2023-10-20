@@ -1,0 +1,157 @@
+.popover {
+    position: absolute;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    padding: 10px;
+    box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+    max-width: 250px;
+    display: none;
+    z-index: 1000;
+}
+
+.popover-header {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.popover-link {
+    display: block;
+    margin-top: 10px;
+    color: blue;
+    text-decoration: underline;
+}
+
+.popover-close-btn {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border: none;
+    background: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+    color: #333;
+    font-weight: bold;
+    background-color: #f7f7f7; // Light gray background
+    border: 1px solid #ddd; // Border
+    border-radius: 50%; // Round shape
+    width: 25px;
+    height: 25px;
+    text-align: center;
+    transition: background-color 0.3s ease; // Transition effect for hover
+}
+
+.popover-close-btn:hover {
+    background-color: #e6e6e6; // Slightly darker gray when hovered
+}
+
+
+g[id="Five Points"],
+g[id="Old Redford"],
+g[id="Minock Park"],
+g[id="Westwood Park"],
+g[id="Grandmont"],
+g[id="Sherwood Forest"],
+g[id="Palmer Woods"],
+g[id="Boston Edison"],
+g[id="New Center"],
+g[id="West Village"],
+g[id="English Village"],
+g[id="Corktown Shores"],
+g[id="Brush Park"],
+g[id="Lafayette Park"],
+g[id="Gold Coast"],
+g[id="Indian Village"],
+g[id="Hubbard Farms"],
+g[id="Eastern Market"],
+g[id="Russel Woods"],
+g[id="Castle Rouge"],
+g[id="Eliza Howell"],
+g[id="NW Goldberg"],
+g[id="Core City"],
+g[id="Woodbridge"],
+g[id="Rivertown"],
+g[id="Elmwood Park"],
+g[id="McDougall Hunt"],
+g[id="IslandView"],
+g[id="Marina District"],
+g[id="Foch"],
+g[id="Kettering"],
+g[id="Poletown East"],
+g[id="Cass Corridor"],
+g[id="Corktown"],
+g[id="Downtown"],
+g[id="Midtown"],
+g[id="Milwaukee Junction"],
+g[id="North End"],
+g[id="LaSalle Gardens"],
+g[id="Arden Park"],
+g[id="Petosky-Otsego"],
+g[id="Dexter-Linwood"],
+g[id="Hope Village"],
+g[id="Martin Park"],
+g[id="University District"],
+g[id="Detroit Golf"],
+g[id="Palmer Park"],
+g[id="Grixdale Farms"],
+g[id="NorHam"],
+g[id="Davison"],
+g[id="State Fair"],
+g[id="Grixdale"],
+g[id="Conant Gardens"],
+g[id="Krainz Woods"],
+g[id="Nortown"],
+g[id="City Airport"],
+g[id="Osborn"],
+g[id="Regent Park"],
+g[id="Burbank"],
+g[id="LaSalle College Park"],
+g[id="Ravendale"],
+g[id="Denby"],
+g[id="St. Jean"],
+g[id="Chandler Park"],
+g[id="Morningside"],
+g[id="East English Village"],
+g[id="Balduck Hill"],
+g[id="Jefferson-Mack"],
+g[id="Jefferson Chalmers"],
+g[id="West Side Industrial"],
+g[id="North Corktown"],
+g[id="Green Acres"],
+g[id="Pembroke"],
+g[id="Bagley"],
+g[id="Fitzgerald"],
+g[id="Littlefield"],
+g[id="Grand Meyer"],
+g[id="Southwest"],
+g[id="Mexicantown"],
+g[id="Delray"],
+g[id="Springwells Village"],
+g[id="Oakwood Heights"],
+g[id="Boynton"],
+g[id="Condon"],
+g[id="Chadsey"],
+g[id="Barton McFarland"],
+g[id="Aviation Subdivision"],
+g[id="Fiskorn"],
+g[id="Greenfield-Grand River"],
+g[id="Belmont"],
+g[id="Grandmont Rosedale"],
+g[id="Rosedale Park"],
+g[id="The Eye"],
+g[id="Seven Mile Evergreen"],
+g[id="Grandale"],
+g[id="Hernan Gardens"],
+g[id="Franklin Park"],
+g[id="Warrendale"],
+g[id="River Rouge"],
+g[id="Brightmoor"],
+g[id="Riverdale"],
+g[id="Greenfield"],
+g[id="Berg-Lahser"],
+g[id="North Rosedale Park"],
+g[id="Belle Isle"] {
+    cursor: pointer;
+}
+
