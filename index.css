@@ -1,9 +1,0 @@
-#svg-container {
-  width: 100%;
-  overflow: auto;
-}
-
-svg {
-  display: block;
-  max-width: 100%;
-}
